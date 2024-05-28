@@ -1,0 +1,56 @@
+loggers:
+  date_suffix:
+  path_logs:
+random_seed: 42
+device:
+  use_gpu: true
+data:
+  ratio_train_val: 0.2
+  ratio_subset_train: 1
+  dataset: cifar10
+  batch_size:
+  - 256
+  - 1000
+  - 1000
+  random_seed: 40
+  download: true
+loss:
+  loss_type:
+  ce_params: {}
+  reg_params: {}
+optimizer:
+lr_scheduler:
+  lr_scheduler_class: ReduceLROnPlateau
+  params:
+    mode: min
+    patience: 40
+    factor: 0.5
+model:
+  num_models: 1
+  model_class: MLPNet
+  hidden_layers:
+  dropout_rates:
+  - 0.3
+  - 0.3
+checkpoint:
+  resume: false
+  date:
+  time:
+training:
+  training_epochs:
+  clip_grad_norm: 1
+  uncertainties_per_epoch: false
+  is_temperature_scaling: false
+  val_mc_dropout_samples: 5
+  val_every_k_epochs: 1
+  backend_uncertainties: torch
+  save_model_state_every_k_epochs: 0
+  early_stopping:
+    tolerance: 200
+    min_delta: 0
+evaluation:
+  use_mc_dropout: true
+  mc_forward_passes: 20
+  save_uncertainties_metrics: true
+  backend: numpy
+  use_latest: true
