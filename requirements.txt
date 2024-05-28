@@ -1,0 +1,17 @@
+torch==2.0.1
+tensorboard
+torchvision
+torchinfo
+ddu_dirty_mnist
+scikit-learn
+tqdm
+matplotlib
+seaborn
+ruamel.yaml<0.18.0
+munch
+pyro-ppl
+arviz
+joblib
+nbdime
+tabulate
+codecarbon
